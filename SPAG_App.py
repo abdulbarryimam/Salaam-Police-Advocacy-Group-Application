@@ -67,7 +67,7 @@ elif page == "Admin Dashboard":
     
     # Simple Password Protection
     password = st.text_input("Enter Admin Password", type="password")
-    if password == "SPAG_Admin_2026": # Change to your secure password
+    if password == "macabantog1977": # Change to your secure password
         st.success("Access Granted")
         
         df = st.session_state.db
