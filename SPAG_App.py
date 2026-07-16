@@ -28,7 +28,7 @@ if page == "Registration Form":
         
         with col1:
             status = st.radio("Application Type", ["New Applicant", "Existing Member"])
-            name = st.text_input(label="Full Name", placeholder="Juan Marcelo Dela Cruz")
+            name = st.text_input(label="Full Name", placeholder="Ex.(Juan Marcelo Dela Cruz)")
             religion = st.text_input("Religion")
             birthdate = st.date_input("Date of Birth", min_value=datetime(1920, 1, 1))
             age = st.number_input("Age", min_value=15, max_value=100, value=25)
