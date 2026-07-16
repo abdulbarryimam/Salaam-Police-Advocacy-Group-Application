@@ -119,5 +119,29 @@ elif page == "Admin Dashboard":
                 mime="text/csv"
             )
             st.info("💡 To print, simply use your browser's print function (Ctrl+P / Cmd+P) while viewing this dashboard.")
+
+    # --- DELETE MEMBER OPTION ---
+            st.write("---")
+            st.subheader("🗑️ Delete Registered Members")
+            
+            # Create dropdown options showing Name and Row Index to safely handle duplicate names
+            member_options = [f"{row['Name']} (Row {idx})" for idx, row in df.iterrows()]
+            selected_member = st.selectbox("Select a member to remove:", ["Select a member..."] + member_options)
+            
+            if selected_member != "Select a member...":
+                # Extract the index from the selection string
+                target_idx = int(selected_member.split("(Row ")[1].replace(")", ""))
+                member_name = df.loc[target_idx, "Name"]
+                
+                # Confirmation button to prevent accidental deletions
+                confirm_delete = st.button(f"Confirm Deletion of: {member_name}", type="primary")
+                
+                if confirm_delete:
+                    # Drop the row and reset index to keep the database structured
+                    st.session_state.db = st.session_state.db.drop(target_idx).reset_index(drop=True)
+                    st.success(f"Successfully deleted {member_name} from the database!")
+                    st.rerun()  # Forces Streamlit to refresh and update charts & tables immediately
+
     elif password:
         st.error("Incorrect Password.")
+
