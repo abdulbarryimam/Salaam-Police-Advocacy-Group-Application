@@ -47,7 +47,8 @@ if page == "Registration Form":
                                             "BARMM – Bangsamoro Autonomous Region in Muslim Mindanao", "NIR – Negros Island Region"])
             address = st.text_area("Complete Address")
             profession = st.text_input("Profession / Occupation")
-            club = st.text_input("Club / Affiliation Belonged To")
+            club = st.text_input("Club / Chapter")
+            position = st.text_input("Position")
             skills = st.text_input("Interests, Talents, & Skills (Comma separated)")
             
         st.write("---")
