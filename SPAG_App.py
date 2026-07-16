@@ -51,11 +51,6 @@ if page == "Registration Form":
             position = st.text_input("Position")
             skills = st.text_input("Interests, Talents, & Skills (Comma separated)")
             
-        st.write("---")
-        st.subheader("Required Document Uploads")
-        photo = st.file_uploader("Upload 2x2 Photo", type=["jpg", "png", "jpeg"])
-        pnp_clearance = st.file_uploader("Upload PNP Clearance", type=["jpg", "png", "pdf"])
-        
         submit = st.form_submit_button("Submit Application")
         
         if submit:
