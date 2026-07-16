@@ -37,7 +37,7 @@ if page == "Registration Form":
     
             
         with col2:
-            phone = st.text_input("Contact Number")
+            phone = st.text_input(label="Contact Number", placeholder="09XX XXX XXXX")
             email = st.text_input("Email Address")
             region = st.selectbox("Region", ["Region I – Ilocos Region", "Region II – Cagayan Valley", "Region III – Central Luzon", 
                                              "Region IV‑A – CALABARZON", "MIMAROPA Region", "Region V – Bicol Region", "Region VI – Western Visayas", 
