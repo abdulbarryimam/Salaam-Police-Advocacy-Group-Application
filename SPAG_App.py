@@ -27,14 +27,23 @@ if page == "Registration Form":
         
         with col1:
             status = st.radio("Application Type", ["New Applicant", "Existing Member"])
-            name = st.text_input("Full Name")
+            name = st.text_input(label="Full Name", placeholder="Juan Marcelo Dela Cruz"
+            religion = st.text_input("Religion")
+            birthdate = st.date_input("Date of Birth", min_value=datetime(1920, 1, 1))
             age = st.number_input("Age", min_value=15, max_value=100, value=25)
+            blood = st.selectbox("Blood Type", ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"])
             education = st.selectbox("Educational Status", ["High School", "Vocational", "College Graduate", "Post-Graduate"])
-            phone = st.text_input("Contact Number")
-            email = st.text_input("Email Address")
+    
             
         with col2:
-            region = st.selectbox("Region", ["Region I", "Region II", "Region III", "NCR", "BARMM", "Region XII"]) # Expand list as needed
+            phone = st.text_input("Contact Number")
+            email = st.text_input("Email Address")
+            region = st.selectbox("Region", ["Region I – Ilocos Region", "Region II – Cagayan Valley", "Region III – Central Luzon", 
+                                             "Region IV‑A – CALABARZON", "MIMAROPA Region", "Region V – Bicol Region", "Region VI – Western Visayas", 
+                                            "Region VII – Central Visayas", "Region VIII – Eastern Visayas", "Region IX – Zamboanga Peninsula", 
+                                            "Region X – Northern Mindanao", "Region XI – Davao Region", "Region XII – SOCCSKSARGEN", 
+                                            "Region XIII – Caraga", "NCR – National Capital Region", "CAR – Cordillera Administrative Region", 
+                                            "BARMM – Bangsamoro Autonomous Region in Muslim Mindanao", "NIR – Negros Island Region"])
             address = st.text_area("Complete Address")
             profession = st.text_input("Profession / Occupation")
             club = st.text_input("Club / Affiliation Belonged To")
