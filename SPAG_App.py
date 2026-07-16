@@ -33,7 +33,7 @@ if page == "Registration Form":
             birthdate = st.date_input("Date of Birth", min_value=datetime(1920, 1, 1))
             age = st.number_input("Age", min_value=15, max_value=100, value=25)
             blood = st.selectbox("Blood Type", ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"])
-            education = st.selectbox("Highest Educaional Attainment", ["High School", "Vocational", "College Graduate", "Master's Degree", "Doctor of Philosophy (PhD)])
+            education = st.selectbox("Highest Educaional Attainment", ["High School", "Vocational", "College Graduate", "Master's Degree", "Doctor of Philosophy (PhD)"])
     
             
         with col2:
